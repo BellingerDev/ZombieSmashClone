@@ -7,12 +7,20 @@ namespace Game.Data
     public class EnemyData : ScriptableObject
     {
         [SerializeField]
-        private int health;
+        private string  prototypeID;
 
         [SerializeField]
-        private int damage;
+        private int     health;
 
-        public int Health { get { return health; } }
-        public int Damage { get { return damage; } }
+        [SerializeField]
+        private int     damage;
+
+        [SerializeField]
+        private float   speed;
+
+        public string   PrototypeId     { get { return prototypeID; } }
+        public int      Health          { get { return health; } }
+        public int      Damage          { get { return damage; } }
+        public float    Speed           { get { return speed; } }
     }
 }

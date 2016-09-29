@@ -13,17 +13,33 @@ namespace Game.Data
             [Serializable]
             public class EnemyUnit
             {
-                public string enemy;
-                public int count;
+                [SerializeField]
+                private string enemy;
+
+                [SerializeField]
+                private int count;
+
+                public string Enemy     { get { return enemy; } }
+                public int Count        { get { return count; } }
             }
 
+            [SerializeField]
+            private float time;
 
-            public float time;
-            public float timeScatter;
-            public EnemyUnit[] enemies;
+            [SerializeField]
+            private EnemyUnit[] enemies;
+
+            public float Time           { get { return time; } }
+            public EnemyUnit[] Enemies  { get { return enemies; } }
         }
 
-        public Wave[] waves;
-        public float battleTime;
+        [SerializeField]
+        private Wave[] waves;
+
+        [SerializeField]
+        private float battleTime;
+
+        public Wave[] Waves             { get { return waves; } }
+        public float BattleTime         { get { return battleTime; } }
     }
 }

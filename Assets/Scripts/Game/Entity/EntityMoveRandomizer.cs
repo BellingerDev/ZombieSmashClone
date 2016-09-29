@@ -15,7 +15,6 @@ namespace Game.Entity
         private class MoveRandomizeStep
         {
             public float time;
-            public float timeScatter;
 
             public MoveDirection direction;
             public bool isRandomDirection;

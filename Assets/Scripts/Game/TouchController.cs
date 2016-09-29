@@ -12,13 +12,16 @@ namespace Game
         [SerializeField]
         private float raycastMaxDistance;
 
+        [SerializeField]
+        private string gameCameraTag;
+
         private Camera gameCamera;
         private Player player;
 
 
         private void Awake()
         {
-            gameCamera = FindObjectOfType<Camera>();
+            gameCamera = GameObject.FindGameObjectWithTag(gameCameraTag).GetComponent<Camera>();
             player = FindObjectOfType<Player>();
         }
 
@@ -35,10 +38,13 @@ namespace Game
                 if (player != null)
                 {
                     Ray ray = gameCamera.ScreenPointToRay(Input.mousePosition);
+                    Debug.DrawRay(ray.origin, ray.direction);
                     RaycastHit hit;
 
-                    if (Physics.Raycast(ray, out hit, raycastMaxDistance, raycastLayer))
+                    if (Physics.Raycast(ray, out hit, raycastMaxDistance))
                     {
+                        Debug.Log("TouchController : Hit : " + hit.collider.name);
+
                         IEntity entity = (IEntity)hit.collider.GetComponent(typeof(IEntity));
                         if (entity != null)
                             entity.ObtainDamage(player.TakeDamage());

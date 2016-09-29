@@ -84,7 +84,7 @@ namespace Utils.Poolable
         private PoolElement[] elements;
 
 
-        private void Awake()
+        public void Init()
         {
             DontDestroyOnLoad(this.gameObject);
 
@@ -92,7 +92,7 @@ namespace Utils.Poolable
                 e.Init(this.transform);
         }
 
-        private void OnDestroy()
+        public void DeInit()
         {
             foreach (var e in elements)
                 e.DeInit();

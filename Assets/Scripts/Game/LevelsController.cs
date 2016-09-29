@@ -28,14 +28,9 @@ namespace Game
         [SerializeField]
         private LevelData[] levels;
 
-        public int CurrentLevel
-        {
-            get
-            {
-                return PlayerPrefs.GetInt(CURRENT_LEVEL_ID);
-            }
-        }
+        [SerializeField]
+        private int currentLevel;
 
-        public LevelData CurrentLevelData { get { return levels[CurrentLevel]; } }
+        public LevelData CurrentLevelData { get { return levels[currentLevel]; } }
     }
 }

@@ -7,7 +7,12 @@ namespace Game.Entity
     {
         int TakeDamage();
         void ObtainDamage(int damage);
+        void ConfigureBalance(object data);
+
+        int Health                      { get; }
         
-        Action OnDied { get; set; }
+        Action<int> OnDamageObtained    { get; set; }
+        Action<int> OnDamageTaken       { get; set; }
+        Action OnDied                   { get; set; }
     }
 }

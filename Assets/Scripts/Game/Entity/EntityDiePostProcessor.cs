@@ -35,7 +35,9 @@ namespace Game.Entity
         private void OnDiedCallback()
         {
             GameObject deadBody = Pool.Instance.Get(diedEntityPoolId);
+
             deadBody.transform.SetParent(null);
+            deadBody.transform.position = transform.position;
             deadBody.SetActive(true);
 
             Pool.Instance.Retrieve(this.gameObject);

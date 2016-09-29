@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -6,56 +6,47 @@ namespace Game.Entity
 {
     public class EntityMover : MonoBehaviour
     {
-        [SerializeField]
-        private Vector3[] targets;
-
-        [SerializeField]
-        private float accuracy;
-
-        public Action OnFinished { get; set; }
-
-        private int current;
-        private bool isFinish;
-
-
-        private void OnEnable()
+        private class MoveData
         {
-            current = 0;
-            isFinish = false;
+            public Vector3 Position { get; private set; }
+            public float Speed { get; private set; }
+
+            public MoveData(Vector3 pos, float s)
+            {
+                Position = pos;
+                Speed = s;
+            }
         }
 
-        private void OnDisable()
+        [SerializeField]
+        private float               accuracy;
+
+        private Queue<MoveData>     moves = new Queue<MoveData>();
+ 
+
+        public void Move(Vector3 position, float speed)
         {
-            OnFinished = null;
+            moves.Enqueue(new MoveData(position, speed));
+        }
+
+        public void Clear()
+        {
+            moves.Clear();
         }
 
         private void Update()
         {
-            if (!isFinish)
+            if (moves.Count > 0)
             {
-                if (current < targets.Length)
+                MoveData md = moves.Peek();
+                if (md != null)
                 {
-                    if ((targets[current] - transform.position).magnitude > accuracy)
-                    {
-                        transform.position = Vector3.MoveTowards(transform.position, targets[current], Time.deltaTime);
-                    }
+                    if ((md.Position - transform.position).magnitude > accuracy)
+                        transform.position = Vector3.MoveTowards(transform.position, md.Position, md.Speed * Time.deltaTime);
                     else
-                    {
-                        if (++current >= targets.Length)
-                        {
-                            isFinish = true;
-
-                            if (OnFinished != null)
-                                OnFinished();
-                        }
-                    }
+                        moves.Dequeue();
                 }
             }
-        }
-
-        public void SetFinish(bool state)
-        {
-            isFinish = state;
         }
     }
 }

@@ -13,21 +13,13 @@ namespace Game.Data
         private PlayerData player;
 
         [SerializeField]
-        private EnemyData enemyCreep;
-
-        [SerializeField]
-        private EnemyData enemyZigZagGuy;
-
-        [SerializeField]
-        private EnemyData enemyDengerous;
+        private EnemyData[] enemies;
 
 
         public BattleData Battle            { get { return battle; } }
 
         public PlayerData Player            { get { return player; } }
 
-        public EnemyData EnemyCreep         { get { return enemyCreep; } }
-        public EnemyData EnemyZigZagGuy     { get { return enemyZigZagGuy; } }
-        public EnemyData EnemyDengerous     { get { return enemyDengerous; } }
+        public EnemyData[] Enemies          { get { return enemies; } }
     }
 }
