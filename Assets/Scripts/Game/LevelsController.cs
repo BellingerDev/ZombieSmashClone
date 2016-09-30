@@ -1,7 +1,7 @@
 ﻿using Game.Data;
 using System;
 using UnityEngine;
-
+using Utils.Saves;
 
 namespace Game
 {
@@ -47,6 +47,7 @@ namespace Game
         public void SetActiveLevel(int lvlId)
         {
             currentLevel = lvlId;
+            SavesManager.Instance.SetActiveLevel(currentLevel);
         }
     }
 }

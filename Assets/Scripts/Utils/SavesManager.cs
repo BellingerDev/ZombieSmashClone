@@ -39,6 +39,9 @@ namespace Utils.Saves
             [SerializeField]
             private LevelProgress[] levels = new LevelProgress[0];
 
+            [SerializeField]
+            private int activeLevel;
+
 
             public int GetStars(int lvlId)
             {
@@ -77,6 +80,16 @@ namespace Utils.Saves
                     Array.Resize<LevelProgress>(ref levels, levels.Length + 1);
                     levels[levels.Length - 1] = lp;
                 }
+            }
+
+            public int GetActiveLevel()
+            {
+                return activeLevel;
+            }
+
+            public void SetActiveLevel(int lvl)
+            {
+                activeLevel = lvl;
             }
         }
 
@@ -130,6 +143,16 @@ namespace Utils.Saves
         {
             levelsProgress.SetStars(lvlId, stars, completed);
             Save();
+        }
+
+        public int GetActiveLevel()
+        {
+            return levelsProgress.GetActiveLevel();
+        }
+
+        public void SetActiveLevel(int lvl)
+        {
+            levelsProgress.SetActiveLevel(lvl);
         }
 
         public void ResetSaves()

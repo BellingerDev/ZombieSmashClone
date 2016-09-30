@@ -106,7 +106,7 @@ namespace Game
                     break;
 
                 case GameState.Main:
-
+                    UIController.Instance.Show<UIMainMenuScreen>();
                     break;
 
                 case GameState.Pause:
