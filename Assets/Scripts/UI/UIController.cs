@@ -27,12 +27,24 @@ namespace UI
         public void Init()
         {
             screens = GetComponentsInChildren<UIScreen>(true);
-            HideAll();
+
+
+            foreach (var s in screens)
+            {
+                s.Init();
+                s.gameObject.SetActive(false);
+            }
         }
 
         public void DeInit()
         {
+            foreach (var s in screens)
+            {
+                s.DeInit();
+            }
+
             HideAll();
+
             screens = null;
         }
 
@@ -43,6 +55,8 @@ namespace UI
             UIScreen screen = Array.FindLast<UIScreen>(screens, s => s is T);
             if (screen != null)
                 screen.Show();
+
+            Debug.Log("UIControler : Screen : " + typeof(T).ToString() + " was showed");
         }
 
         private void HideAll()

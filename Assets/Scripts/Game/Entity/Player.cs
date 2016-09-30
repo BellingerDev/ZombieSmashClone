@@ -7,17 +7,24 @@ using UnityEngine;
 
 namespace Game
 {
-    public class Player : MonoBehaviour, IEntity
+    public class Player : MonoBehaviour, IEntity, IExplodable
     {
         private int health;
         private int damage;
+
+        private string bombId;
         private int bombsCount;
+        private int bombDamage;
 
-        public int Health { get { return health; } }
+        public int Health                       { get { return health; } }
 
-        public Action OnDied { get; set; }
-        public Action<int> OnDamageObtained { get; set; }
-        public Action<int> OnDamageTaken { get; set; }
+        public string BombId                    { get { return bombId; } }
+        public int BombsCount                   { get { return bombsCount; } }
+        public int BombDamage                   { get { return bombDamage; } }
+
+        public Action OnDied                    { get; set; }
+        public Action<int> OnDamageObtained     { get; set; }
+        public Action<int> OnDamageTaken        { get; set; }
 
 
         public void ConfigureBalance(object data)
@@ -27,7 +34,10 @@ namespace Game
             {
                 health = pd.Health;
                 damage = pd.Damage;
+
+                bombId = pd.BombId;
                 bombsCount = pd.BombsCount;
+                bombDamage = pd.BombDamage;
             }
         }
 
@@ -38,7 +48,7 @@ namespace Game
             if (OnDamageObtained != null)
                 OnDamageObtained(damage);
 
-            if (health < 0 && OnDied != null)
+            if (health <= 0 && OnDied != null)
                 OnDied();
         }
 
@@ -48,6 +58,11 @@ namespace Game
                 OnDamageTaken(damage);
 
             return damage;
+        }
+
+        public void ExplodeBomb()
+        {
+            bombsCount--;
         }
 
         private void Awake()

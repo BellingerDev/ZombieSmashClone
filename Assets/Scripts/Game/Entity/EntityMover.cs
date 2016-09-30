@@ -36,6 +36,9 @@ namespace Game.Entity
 
         private void Update()
         {
+            if (BattleController.Instance.IsPaused)
+                return;
+
             if (moves.Count > 0)
             {
                 MoveData md = moves.Peek();

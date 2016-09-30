@@ -1,0 +1,454 @@
+fileFormatVersion: 2
+guid: 84318a79c2308d44fa083d8fd2d8c9dc
+timeCreated: 1475185817
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: UIAtlas_0
+    21300002: UIAtlas_1
+    21300004: UIAtlas_2
+    21300006: UIAtlas_3
+    21300008: UIAtlas_4
+    21300010: UIAtlas_5
+    21300012: UIAtlas_6
+    21300014: UIAtlas_7
+    21300016: UIAtlas_8
+    21300018: UIAtlas_9
+    21300020: UIAtlas_10
+    21300022: UIAtlas_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: UIAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1676
+        width: 237
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 118.5, y: 42.5}
+        - {x: 94.5, y: 81.5}
+        - {x: 74.5, y: 103.5}
+        - {x: 34.5, y: 118.5}
+        - {x: -32.5, y: 118.5}
+        - {x: -72.5, y: 102.5}
+        - {x: -94.5, y: 80.5}
+        - {x: -115.5, y: 42.5}
+        - {x: -118.5, y: 28.5}
+        - {x: -118.5, y: -33.5}
+        - {x: -98.5, y: -77.5}
+        - {x: -64.5, y: -107.5}
+        - {x: -28.5, y: -118.5}
+        - {x: 32.5, y: -118.5}
+        - {x: 70.5, y: -103.5}
+        - {x: 98.5, y: -78.5}
+        - {x: 118.5, y: -40.5}
+    - name: UIAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 1707
+        width: 237
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 118.5, y: 45.5}
+        - {x: 98.5, y: 77.5}
+        - {x: 62.5, y: 108.5}
+        - {x: 34.5, y: 117.5}
+        - {x: 26.5, y: 118.5}
+        - {x: -43.5, y: 118.5}
+        - {x: -98.5, y: 82.5}
+        - {x: -115.5, y: 51.5}
+        - {x: -118.5, y: 31.5}
+        - {x: -118.5, y: -41.5}
+        - {x: -104.5, y: -73.5}
+        - {x: -79.5, y: -95.5}
+        - {x: -43.5, y: -118.5}
+        - {x: 35.5, y: -118.5}
+        - {x: 52.5, y: -113.5}
+        - {x: 93.5, y: -86.5}
+        - {x: 118.5, y: -41.5}
+    - name: UIAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 1694
+        width: 312
+        height: 283
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 85, y: -7.5}
+        - {x: 73, y: 29.5}
+        - {x: 89, y: 59.5}
+        - {x: 116, y: 80.5}
+        - {x: 147, y: 97.5}
+        - {x: 156, y: 110.5}
+        - {x: 156, y: 135.5}
+        - {x: 149, y: 141.5}
+        - {x: 14, y: 141.5}
+        - {x: -29, y: 133.5}
+        - {x: -44, y: 119.5}
+        - {x: -54, y: 98.5}
+        - {x: -87, y: 101.5}
+        - {x: -137, y: 70.5}
+        - {x: -156, y: 40.5}
+        - {x: -156, y: -82.5}
+        - {x: -146, y: -101.5}
+        - {x: -110, y: -134.5}
+        - {x: -91, y: -141.5}
+        - {x: 18, y: -141.5}
+        - {x: 44, y: -128.5}
+        - {x: 70, y: -103.5}
+        - {x: 86, y: -70.5}
+    - name: UIAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 1389
+        width: 84
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42, y: 64.5}
+        - {x: -42, y: -64.5}
+        - {x: 42, y: -64.5}
+        - {x: 42, y: 64.5}
+    - name: UIAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1386
+        width: 106
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 70.5}
+        - {x: -53, y: 26.5}
+        - {x: -53, y: -37.5}
+        - {x: 0, y: -70.5}
+        - {x: 52, y: -70.5}
+        - {x: 53, y: -68.5}
+        - {x: 53, y: 69.5}
+        - {x: 51, y: 70.5}
+    - name: UIAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 1387
+        width: 105
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.5, y: 70.5}
+        - {x: -52.5, y: 36.5}
+        - {x: -52.5, y: -68.5}
+        - {x: -46.5, y: -70.5}
+        - {x: 52.5, y: -70.5}
+        - {x: 52.5, y: 69.5}
+        - {x: 48.5, y: 70.5}
+    - name: UIAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 35
+        width: 837
+        height: 837
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 258, y: 384, z: 542, w: 423}
+      outline:
+      - - {x: -17.5, y: -417.5}
+        - {x: -16.5, y: -416.5}
+        - {x: -11.5, y: -415.5}
+        - {x: -6.5, y: -413.5}
+        - {x: -5.5, y: -411.5}
+        - {x: 345.5, y: -411.5}
+        - {x: 346.5, y: -410.5}
+        - {x: 357.5, y: -410.5}
+        - {x: 358.5, y: -409.5}
+        - {x: 363.5, y: -409.5}
+        - {x: 364.5, y: -408.5}
+        - {x: 368.5, y: -408.5}
+        - {x: 372.5, y: -406.5}
+        - {x: 375.5, y: -406.5}
+        - {x: 388.5, y: -400.5}
+        - {x: 396.5, y: -392.5}
+        - {x: 396.5, y: -391.5}
+        - {x: 402.5, y: -384.5}
+        - {x: 402.5, y: -382.5}
+        - {x: 404.5, y: -380.5}
+        - {x: 404.5, y: -377.5}
+        - {x: 406.5, y: -375.5}
+        - {x: 406.5, y: -367.5}
+        - {x: 409.5, y: -364.5}
+        - {x: 410.5, y: -360.5}
+        - {x: 411.5, y: -359.5}
+        - {x: 411.5, y: -315.5}
+        - {x: 414.5, y: -311.5}
+        - {x: 414.5, y: -308.5}
+        - {x: 416.5, y: -306.5}
+        - {x: 416.5, y: -297.5}
+        - {x: 418.5, y: -297.5}
+        - {x: 418.5, y: 168.5}
+        - {x: 416.5, y: 168.5}
+        - {x: 416.5, y: 177.5}
+        - {x: 414.5, y: 179.5}
+        - {x: 414.5, y: 181.5}
+        - {x: 411.5, y: 185.5}
+        - {x: 411.5, y: 359.5}
+        - {x: 410.5, y: 360.5}
+        - {x: 409.5, y: 364.5}
+        - {x: 406.5, y: 367.5}
+        - {x: 406.5, y: 375.5}
+        - {x: 404.5, y: 377.5}
+        - {x: 404.5, y: 380.5}
+        - {x: 402.5, y: 382.5}
+        - {x: 402.5, y: 384.5}
+        - {x: 399.5, y: 387.5}
+        - {x: 399.5, y: 388.5}
+        - {x: 388.5, y: 399.5}
+        - {x: 387.5, y: 399.5}
+        - {x: 386.5, y: 401.5}
+        - {x: 377.5, y: 405.5}
+        - {x: 375.5, y: 405.5}
+        - {x: 374.5, y: 406.5}
+        - {x: 372.5, y: 406.5}
+        - {x: 368.5, y: 408.5}
+        - {x: 364.5, y: 408.5}
+        - {x: 363.5, y: 409.5}
+        - {x: 357.5, y: 409.5}
+        - {x: 356.5, y: 410.5}
+        - {x: 345.5, y: 410.5}
+        - {x: 344.5, y: 411.5}
+        - {x: 124.5, y: 411.5}
+        - {x: 114.5, y: 416.5}
+        - {x: 108.5, y: 417.5}
+        - {x: 107.5, y: 418.5}
+        - {x: -363.5, y: 418.5}
+        - {x: -373.5, y: 417.5}
+        - {x: -374.5, y: 416.5}
+        - {x: -376.5, y: 416.5}
+        - {x: -377.5, y: 415.5}
+        - {x: -385.5, y: 413.5}
+        - {x: -388.5, y: 411.5}
+        - {x: -396.5, y: 407.5}
+        - {x: -407.5, y: 395.5}
+        - {x: -407.5, y: 394.5}
+        - {x: -409.5, y: 393.5}
+        - {x: -410.5, y: 390.5}
+        - {x: -412.5, y: 388.5}
+        - {x: -414.5, y: 383.5}
+        - {x: -414.5, y: 381.5}
+        - {x: -416.5, y: 378.5}
+        - {x: -416.5, y: 370.5}
+        - {x: -418.5, y: 368.5}
+        - {x: -418.5, y: 212.5}
+        - {x: -416.5, y: 211.5}
+        - {x: -416.5, y: 203.5}
+        - {x: -414.5, y: 201.5}
+        - {x: -414.5, y: 198.5}
+        - {x: -411.5, y: 194.5}
+        - {x: -411.5, y: -229.5}
+        - {x: -414.5, y: -233.5}
+        - {x: -414.5, y: -235.5}
+        - {x: -416.5, y: -237.5}
+        - {x: -416.5, y: -246.5}
+        - {x: -418.5, y: -246.5}
+        - {x: -418.5, y: -368.5}
+        - {x: -416.5, y: -371.5}
+        - {x: -416.5, y: -378.5}
+        - {x: -414.5, y: -381.5}
+        - {x: -414.5, y: -383.5}
+        - {x: -412.5, y: -388.5}
+        - {x: -410.5, y: -389.5}
+        - {x: -410.5, y: -391.5}
+        - {x: -407.5, y: -394.5}
+        - {x: -407.5, y: -395.5}
+        - {x: -402.5, y: -401.5}
+        - {x: -401.5, y: -403.5}
+        - {x: -399.5, y: -403.5}
+        - {x: -395.5, y: -407.5}
+        - {x: -394.5, y: -407.5}
+        - {x: -392.5, y: -409.5}
+        - {x: -391.5, y: -409.5}
+        - {x: -390.5, y: -411.5}
+        - {x: -385.5, y: -413.5}
+        - {x: -383.5, y: -413.5}
+        - {x: -377.5, y: -416.5}
+        - {x: -374.5, y: -416.5}
+        - {x: -373.5, y: -417.5}
+        - {x: -370.5, y: -417.5}
+        - {x: -369.5, y: -418.5}
+        - {x: -21.5, y: -418.5}
+        - {x: -20.5, y: -417.5}
+    - name: UIAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1350
+        width: 195
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52.5, y: 92}
+        - {x: -84.5, y: 54}
+        - {x: -84.5, y: -53}
+        - {x: -80.5, y: -91}
+        - {x: 71.5, y: -91}
+        - {x: 88.5, y: -87}
+        - {x: 88.5, y: 65}
+        - {x: 59.5, y: 92}
+    - name: UIAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 1340
+        width: 210
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 92.5}
+        - {x: -46, y: 89.5}
+        - {x: -86, y: 47.5}
+        - {x: -86, y: -89.5}
+        - {x: 78, y: -89.5}
+        - {x: 87, y: -72.5}
+        - {x: 87, y: 56.5}
+        - {x: 42, y: 92.5}
+    - name: UIAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1378
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 55}
+        - {x: -7, y: 55}
+        - {x: -52, y: 36}
+        - {x: -52, y: -49}
+        - {x: -41, y: -54}
+        - {x: 33, y: -54}
+        - {x: 41, y: -45}
+        - {x: 56, y: -9}
+        - {x: 56, y: 14}
+        - {x: 24, y: 51}
+    - name: UIAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 1677
+        width: 260
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 120, y: 20.5}
+        - {x: 113, y: 48.5}
+        - {x: 94, y: 79.5}
+        - {x: 72, y: 100.5}
+        - {x: 35, y: 118.5}
+        - {x: 25, y: 119.5}
+        - {x: -31, y: 119.5}
+        - {x: -69, y: 104.5}
+        - {x: -97, y: 78.5}
+        - {x: -121, y: 38.5}
+        - {x: -121, y: -48.5}
+        - {x: -85, y: -97.5}
+        - {x: -62, y: -109.5}
+        - {x: -24, y: -121.5}
+        - {x: 25, y: -121.5}
+        - {x: 72, y: -107.5}
+        - {x: 103, y: -76.5}
+        - {x: 120, y: -30.5}
+    - name: UIAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 1374
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36, y: 55}
+        - {x: -51, y: 52}
+        - {x: -51, y: -47}
+        - {x: -28, y: -53}
+        - {x: 36, y: -53}
+        - {x: 48, y: -48}
+        - {x: 56, y: -7}
+        - {x: 56, y: 26}
+        - {x: 34, y: 55}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

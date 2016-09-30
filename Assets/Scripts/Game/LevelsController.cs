@@ -32,5 +32,21 @@ namespace Game
         private int currentLevel;
 
         public LevelData CurrentLevelData { get { return levels[currentLevel]; } }
+
+
+        public int GetLevelsCount()
+        {
+            return levels.Length;
+        }
+
+        public int GetActiveLevelId()
+        {
+            return currentLevel;
+        }
+
+        public void SetActiveLevel(int lvlId)
+        {
+            currentLevel = lvlId;
+        }
     }
 }

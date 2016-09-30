@@ -18,10 +18,19 @@ namespace Game.Data
         [SerializeField]
         private int bombsCount;
 
+        [SerializeField]
+        private int bombDamage;
+
+        [SerializeField]
+        private string bombId;
+
         public string PrototypeId   { get { return prototypeId; } }
 
         public int Health           { get { return health; } }
         public int Damage           { get { return damage; } }
+
+        public string BombId        { get { return bombId; } }
         public int BombsCount       { get { return bombsCount; } }
+        public int BombDamage       { get { return bombDamage; } }
     }
 }

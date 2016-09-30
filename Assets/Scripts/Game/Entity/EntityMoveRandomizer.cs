@@ -51,9 +51,10 @@ namespace Game.Entity
 
         private void Update()
         {
+            if (BattleController.Instance.IsPaused)
+                return;
+
             MoveRandomizeStep step = steps[currentStep];
-
-
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Game.Areas;
+using UnityEngine;
 using Utils.Poolable;
 
 
@@ -10,11 +11,13 @@ namespace Game.Entity
         private string diedEntityPoolId;
 
         private IEntity entity;
+        private ObjectsContainer container;
 
 
         private void Awake()
         {
             entity = (IEntity)GetComponent(typeof(IEntity));
+            container = FindObjectOfType<ObjectsContainer>();
         }
 
         private void OnDestroy()
@@ -35,8 +38,9 @@ namespace Game.Entity
         private void OnDiedCallback()
         {
             GameObject deadBody = Pool.Instance.Get(diedEntityPoolId);
+            
+            container.Add(ObjectsContainer.ContainerType.Decals, deadBody);
 
-            deadBody.transform.SetParent(null);
             deadBody.transform.position = transform.position;
             deadBody.SetActive(true);
 

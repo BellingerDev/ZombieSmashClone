@@ -1,18 +1,38 @@
-﻿using UI;
+﻿using System;
+using UI;
 using UI.Screens;
 using UnityEngine;
 using Utils.Poolable;
-
+using Utils.Saves;
 
 namespace Game
 {
     public class GameController : MonoBehaviour
     {
+        #region Singleton Define
+        private static WeakReference instance;
+
+        public static GameController Instance
+        {
+            get
+            {
+                if (instance == null || instance.Target == null)
+                    instance = new WeakReference(FindObjectOfType<GameController>());
+
+                return instance.Target as GameController;
+            }
+        }
+
+        private GameController() { }
+        #endregion
+
         public enum GameState
         {
-            MainMenu,
-            LevelChoose,
-            Battle
+            Main,
+            SelectLevel,
+            Battle,
+            BattleResult,
+            Pause
         }
 
         [SerializeField]
@@ -20,14 +40,22 @@ namespace Game
 
         private LevelsController levels;
 
+        public GameState CurrentState { get; private set; }
+
 
         private void Awake()
         {
             DontDestroyOnLoad(this.gameObject);
 
+            SavesManager.Instance.Load();
             InitComponents();
 
             SwitchState(startState);
+        }
+
+        private void OnDestroy()
+        {
+            SavesManager.Instance.Save();
         }
 
         private void InitComponents()
@@ -44,18 +72,47 @@ namespace Game
             switch (state)
             {
                 case GameState.Battle:
-                    BattleController.Instance.StartBattle(levels.CurrentLevelData);
+                    switch (CurrentState)
+                    {
+                        case GameState.Pause:
+                            BattleController.Instance.PauseBattle(false);
+                            break;
+
+                        case GameState.SelectLevel:
+                            BattleController.Instance.StartBattle(levels.CurrentLevelData);
+                            break;
+
+                        case GameState.BattleResult:
+                            BattleController.Instance.StartBattle(levels.CurrentLevelData);
+                            break;
+
+                        default:
+                            BattleController.Instance.StartBattle(levels.CurrentLevelData);
+                            break;
+                    }
+                    
                     UIController.Instance.Show<UIHUDScreen>();
                     break;
 
-                case GameState.LevelChoose:
+                case GameState.SelectLevel:
+                    UIController.Instance.Show<UISelectLevelScreen>();
+                    break;
+
+                case GameState.Main:
 
                     break;
 
-                case GameState.MainMenu:
+                case GameState.Pause:
+                    BattleController.Instance.PauseBattle(true);
+                    UIController.Instance.Show<UIPauseScreen>();
+                    break;
 
+                case GameState.BattleResult:
+                    UIController.Instance.Show<UIBattleResultScreen>();
                     break;
             }
+
+            CurrentState = state;
         }
     }
 }

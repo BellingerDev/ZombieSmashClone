@@ -1,9 +1,11 @@
 ﻿using Game.Areas;
 using Game.Data;
 using System;
+using UI;
+using UI.Screens;
 using UnityEngine;
 using Utils.Poolable;
-
+using Utils.Saves;
 
 namespace Game
 {
@@ -25,9 +27,12 @@ namespace Game
 
         public enum BattleResult
         {
+            Process,
             Won,
             Lost
         }
+
+        public BattleResult Result { get; set; }
 
         private LevelData           levelData;
 
@@ -37,12 +42,17 @@ namespace Game
         private EntitiesSpawnArea   spawner;
         private ObjectsContainer    container;
 
-        public Action<BattleResult> OnBattleFinish { get; set; }
         public bool                 IsInitialized { get; private set; }
+        public bool                 IsPaused { get; private set; }
 
 
         public void StartBattle(LevelData ld)
         {
+            IsPaused = false;
+            Result = BattleResult.Process;
+
+            container.Clear();
+
             levelData = ld;
 
             startTime = Time.time;
@@ -53,9 +63,14 @@ namespace Game
             GameObject.FindObjectOfType<Player>().OnDied += OnPlayerDied;
         }
 
-        public void ResetBattle()
+        public void RestartBattle()
         {
-            container.Clear();
+            StartBattle(levelData);
+        }
+
+        public void PauseBattle(bool state)
+        {
+            IsPaused = state;
         }
 
         public void Init()
@@ -89,17 +104,20 @@ namespace Game
             if (levelData == null)
                 return;
 
+            if (IsPaused)
+                return;
+
             if (Time.time - startTime < levelData.Battle.BattleTime)
             {
                 if (currentWave < levelData.Battle.Waves.Length)
                 {
                     var wave = levelData.Battle.Waves[currentWave];
-                    
+
                     if ((int)(Time.time - startTime) == (int)wave.Time)
                     {
                         foreach (var eu in wave.Enemies)
                         {
-                            for (int i = 0; i < eu.Count; i ++)
+                            for (int i = 0; i < eu.Count; i++)
                             {
                                 EnemyData ed = Array.FindLast(levelData.Enemies, e => e.PrototypeId == eu.Enemy);
                                 spawner.Spawn(Pool.Instance.Get(eu.Enemy), ed);
@@ -112,15 +130,28 @@ namespace Game
                     return;
                 }
             }
-
-
-            if (OnBattleFinish != null)
-                OnBattleFinish(BattleResult.Won);
+            else
+            {
+                if (Result == BattleResult.Process)
+                    OnBattleWin();
+            }
         }
 
         private void OnPlayerDied()
         {
-            Debug.Log("Game Lost");
+            PauseBattle(true);
+            Result = BattleResult.Lost;
+
+            SavesManager.Instance.SetLevelStars(LevelsController.Instance.GetActiveLevelId(), 1, false);
+            GameController.Instance.SwitchState(GameController.GameState.BattleResult);
+        }
+
+        private void OnBattleWin()
+        {
+            Result = BattleResult.Won;
+
+            SavesManager.Instance.SetLevelStars(LevelsController.Instance.GetActiveLevelId(), FindObjectOfType<Player>().Health, true);
+            GameController.Instance.SwitchState(GameController.GameState.BattleResult);
         }
     }
 }
