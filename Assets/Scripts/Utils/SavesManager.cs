@@ -37,7 +37,7 @@ namespace Utils.Saves
             }
 
             [SerializeField]
-            private LevelProgress[] levels;
+            private LevelProgress[] levels = new LevelProgress[0];
 
 
             public int GetStars(int lvlId)
@@ -130,6 +130,12 @@ namespace Utils.Saves
         {
             levelsProgress.SetStars(lvlId, stars, completed);
             Save();
+        }
+
+        public void ResetSaves()
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.Save();
         }
 
         public GameSettings Settings { get { return settings; } }

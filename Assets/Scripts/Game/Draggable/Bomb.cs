@@ -15,9 +15,15 @@ namespace Game.Draggable
         [SerializeField]
         private float damageDuration;
 
+        [SerializeField]
+        private float hideDelay;
+
         private int damage;
         private float radius;
         private float activatorTime;
+
+        private bool isActivated = false;
+        private bool isExploded = false;
 
 
         public void Setup(int damage, float radius)
@@ -38,7 +44,9 @@ namespace Game.Draggable
 
             castRangeCircle.SetActive(false);
             explosion.SetActive(true);
-            activatorTime = Time.time;
+            isActivated = true;
+            isExploded = false;
+            activatorTime = Time.time + damageDuration;
 
             Debug.Log("Bomb : Activated");
         }
@@ -58,6 +66,10 @@ namespace Game.Draggable
 
         private void OnTriggerStay(Collider col)
         {
+            if (!isActivated)
+                return;
+
+
             IEntity entity = (IEntity)col.GetComponent(typeof(IEntity));
             if (entity != null)
             {
@@ -68,8 +80,17 @@ namespace Game.Draggable
 
         private void Update()
         {
-            if (Time.time > activatorTime + damageDuration)
-                gameObject.SetActive(false);
+            if (Time.time > activatorTime && isActivated)
+            {
+                isActivated = false;
+                isExploded = true;
+                activatorTime = Time.time + hideDelay;
+            }
+            
+            if (Time.time > activatorTime && isExploded)
+            {
+                this.gameObject.SetActive(false);
+            }
         }
     }
 }

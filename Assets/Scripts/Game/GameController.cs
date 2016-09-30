@@ -38,6 +38,9 @@ namespace Game
         [SerializeField]
         private GameState startState;
 
+        [SerializeField]
+        private bool cleanStart = false;
+
         private LevelsController levels;
 
         public GameState CurrentState { get; private set; }
@@ -47,7 +50,6 @@ namespace Game
         {
             DontDestroyOnLoad(this.gameObject);
 
-            SavesManager.Instance.Load();
             InitComponents();
 
             SwitchState(startState);
@@ -60,6 +62,11 @@ namespace Game
 
         private void InitComponents()
         {
+            if (cleanStart)
+                SavesManager.Instance.ResetSaves();
+
+            SavesManager.Instance.Load();
+
             Pool.Instance.Init();
             BattleController.Instance.Init();
             UIController.Instance.Init();

@@ -59,7 +59,12 @@ namespace UI.Screens
 
                 UILevelIcon icon = iconGO.GetComponent<UILevelIcon>();
 
-                icon.Set(i, SavesManager.Instance.GetLevelStars(i));
+                bool isAvailable = SavesManager.Instance.GetLevelCompleted(i);
+
+                if (i > 0 && SavesManager.Instance.GetLevelCompleted(i - 1))
+                    isAvailable = true;
+
+                icon.Set(i, SavesManager.Instance.GetLevelStars(i), SavesManager.Instance.GetLevelCompleted(i), isAvailable);
 
                 iconGO.SetActive(true);
             }

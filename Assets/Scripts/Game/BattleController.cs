@@ -148,6 +148,7 @@ namespace Game
 
         private void OnBattleWin()
         {
+            PauseBattle(true);
             Result = BattleResult.Won;
 
             SavesManager.Instance.SetLevelStars(LevelsController.Instance.GetActiveLevelId(), FindObjectOfType<Player>().Health, true);

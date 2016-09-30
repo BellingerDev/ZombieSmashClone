@@ -11,41 +11,52 @@ namespace UI.Common
         private Text value;
 
         [SerializeField]
-        private GameObject[] starIcons;
+        private GameObject[] starIconsPositive;
+        
+        [SerializeField]
+        private GameObject[] starIconsNegative;
 
         private Image image;
 
         private int levelId;
         private int starsCount;
-
+        private bool isLevelCompleted;
+        private bool isLevelAvailable;
 
         private void Awake()
         {
             image = GetComponent<Image>();
         }
 
-        public void Set(int id, int stars)
+        public void Set(int id, int stars, bool isCompleted, bool isAvailable)
         {
             value.text = (id + 1).ToString();
 
             levelId = id;
             starsCount = stars;
+            isLevelCompleted = isCompleted;
+            isLevelAvailable = isAvailable;
 
-            foreach (var s in starIcons)
+            foreach (var s in starIconsPositive)
                 s.SetActive(false);
 
-            for (int i = 0; i < starIcons.Length; i++)
+            foreach (var s in starIconsNegative)
+                s.SetActive(false);
+
+            GameObject[] icons = isCompleted ? starIconsPositive : starIconsNegative;
+
+            for (int i = 0; i < icons.Length; i++)
             {
-                if (stars <= starIcons.Length && stars <= i && stars < 0)
-                    starIcons[i].SetActive(true);
+                if (stars <= icons.Length && i < stars)
+                    icons[i].SetActive(true);
             }
 
-            image.color = stars == 0 && levelId > 1 ? Color.grey : Color.white;
+            image.color = !isAvailable ? Color.grey : Color.white;
         }
 
         public void OnClicked()
         {
-            if (starsCount > 0 && levelId > 0)
+            if (isLevelCompleted || isLevelAvailable)
                 if (UISelectLevelScreen.OnLevelIconClicked != null)
                     UISelectLevelScreen.OnLevelIconClicked(levelId);
         }
