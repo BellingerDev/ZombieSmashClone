@@ -51,6 +51,21 @@ namespace Game.Entity
                 }
             }
         }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+
+            MoveData[] mds = moves.ToArray();
+
+            for (int i = 0; i < mds.Length; i++)
+            {
+                if (i + 1 < mds.Length - 1)
+                    Gizmos.DrawLine(mds[i].Position + new Vector3(0, 1, 0), mds[i + 1].Position + new Vector3(0, 1, 0));
+
+                Gizmos.DrawSphere(mds[i].Position + new Vector3(0, 1, 0), 0.1f);
+            }
+        }
     }
 }
 

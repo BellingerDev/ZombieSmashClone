@@ -72,7 +72,7 @@ namespace Game
 
         private void OnDestroy()
         {
-            FindObjectOfType<PlayerHitArea>().OnDamageTaken -= ObtainDamage;
+            //FindObjectOfType<PlayerHitArea>().OnDamageTaken -= ObtainDamage;
         }
     }
 }

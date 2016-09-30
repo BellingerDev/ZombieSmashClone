@@ -6,8 +6,8 @@ namespace Game.Entity
     public class EntityCallbackDamagePostProcessor : MonoBehaviour
     {
         [SerializeField]
-        private int callbackDamage;
-
+        private int kickDamage;
+      
         private IEntity entity;
         private IEntity player;
 
@@ -25,19 +25,21 @@ namespace Game.Entity
 
         private void OnEnable()
         {
-            entity.OnDied += OnDied;
+            entity.OnDamageObtained += OnDamageObtained;
+
             player = (IEntity)FindObjectOfType<Player>();
         }
 
         private void OnDisable()
         {
-            entity.OnDied -= OnDied;
+            entity.OnDamageObtained -= OnDamageObtained;
+
             player = null;
         }
 
-        private void OnDied()
+        private void OnDamageObtained(int damage)
         {
-            player.ObtainDamage(callbackDamage);
+            player.ObtainDamage(kickDamage);
         }
     }
 }

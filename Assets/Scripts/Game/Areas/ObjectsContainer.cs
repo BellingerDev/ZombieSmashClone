@@ -35,6 +35,12 @@ namespace Game.Areas
 
         public void Clear()
         {
+            foreach (Transform child in entitiesRoot)
+                child.gameObject.SetActive(false);
+
+            foreach (Transform child in decalsRoot)
+                child.gameObject.SetActive(false);
+
             while (entitiesRoot.childCount > 0)
                 Pool.Instance.Retrieve(entitiesRoot.GetChild(0).gameObject);
             

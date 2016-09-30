@@ -6,8 +6,6 @@ namespace Game.Draggable
 {
     public class Bomb : MonoBehaviour, IDraggable
     {
-        private bool isActivated = false;
-
         [SerializeField]
         private GameObject explosion;
 
@@ -40,7 +38,6 @@ namespace Game.Draggable
 
             castRangeCircle.SetActive(false);
             explosion.SetActive(true);
-            isActivated = true;
             activatorTime = Time.time;
 
             Debug.Log("Bomb : Activated");
@@ -61,10 +58,6 @@ namespace Game.Draggable
 
         private void OnTriggerStay(Collider col)
         {
-            if (!isActivated)
-                return;
-
-
             IEntity entity = (IEntity)col.GetComponent(typeof(IEntity));
             if (entity != null)
             {
@@ -76,7 +69,7 @@ namespace Game.Draggable
         private void Update()
         {
             if (Time.time > activatorTime + damageDuration)
-                isActivated = false;
+                gameObject.SetActive(false);
         }
     }
 }

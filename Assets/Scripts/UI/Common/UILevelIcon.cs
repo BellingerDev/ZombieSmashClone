@@ -45,7 +45,7 @@ namespace UI.Common
 
         public void OnClicked()
         {
-            if (starsCount > 0 && levelId > 1)
+            if (starsCount > 0 && levelId > 0)
                 if (UISelectLevelScreen.OnLevelIconClicked != null)
                     UISelectLevelScreen.OnLevelIconClicked(levelId);
         }

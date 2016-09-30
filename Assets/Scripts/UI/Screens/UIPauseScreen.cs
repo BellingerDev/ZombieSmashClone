@@ -27,6 +27,11 @@ namespace UI.Screens
             base.DeInit();
         }
 
+        public void OnResumeClicked()
+        {
+            GameController.Instance.SwitchState(GameController.GameState.Battle);
+        }
+
         public void OnRestartClicked()
         {
             GameController.Instance.SwitchState(GameController.GameState.Battle);

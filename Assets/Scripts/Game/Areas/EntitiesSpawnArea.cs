@@ -1,16 +1,29 @@
 ﻿using Game.Entity;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 namespace Game.Areas
 {
-    public class EntitiesSpawnArea : MonoBehaviour
+    public class EntitiesSpawnArea : MonoBehaviour, IEntitySpawnLimits
     {
         [SerializeField]
         private float spawnRange;
 
         private ObjectsContainer container;
         private PoolRetieveArea poolArea;
+
+        public Vector3 LeftLimit
+        {
+            get { return poolArea.transform.position + new Vector3(-spawnRange, 0, 0); }
+            set { }
+        }
+
+        public Vector3 RightLimit
+        {
+            get { return poolArea.transform.position + new Vector3(spawnRange, 0, 0); }
+            set { }
+        }
 
 
         public void Init()
@@ -38,6 +51,13 @@ namespace Game.Areas
             IMovableEntity me = (IMovableEntity)entity.GetComponent(typeof(IMovableEntity));
             if (me != null)
                 me.Move(new Vector3(spawnPosition.x, spawnPosition.y, poolArea.transform.position.z));
+
+            IEntitySpawnLimits limits = (IEntitySpawnLimits)entity.GetComponent(typeof(IEntitySpawnLimits));
+            if (limits != null)
+            {
+                limits.LeftLimit = LeftLimit;
+                limits.RightLimit = RightLimit;
+            }
 
             entity.transform.position = spawnPosition;
             entity.transform.forward = this.transform.forward;

@@ -1,31 +1,28 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 namespace Game.Entity
 {
-    public class EntityMoveRandomizer : MonoBehaviour
+    public class EntityMoveRandomizer : MonoBehaviour, IEntitySpawnLimits
     {
-        private enum MoveDirection
-        {
-            Left, Right
-        }
-
-        [Serializable]
-        private class MoveRandomizeStep
-        {
-            public float time;
-
-            public MoveDirection direction;
-            public bool isRandomDirection;
-        }
+        [SerializeField]
+        private float time;
 
         [SerializeField]
-        private MoveRandomizeStep[] steps;
+        private float timeScatter;
+
+        [SerializeField]
+        private float randomStepSize;
+
+        [SerializeField]
+        private float randomMoveSpeed;
 
         private EntityMover mover;
-        private float startTime;
-        private int currentStep;
+        private float randomStepTime;
+        private bool isRandomed;
+
+        public Vector3 LeftLimit { get; set; }
+        public Vector3 RightLimit { get; set; }
 
 
         private void Awake()
@@ -40,13 +37,8 @@ namespace Game.Entity
 
         private void OnEnable()
         {
-            startTime = Time.time;
-            currentStep = 0;
-        }
-
-        private void OnDisable()
-        {
-            startTime = -1;
+            randomStepTime = (Time.time + time) + Random.Range(-timeScatter, timeScatter);
+            isRandomed = false;
         }
 
         private void Update()
@@ -54,7 +46,17 @@ namespace Game.Entity
             if (BattleController.Instance.IsPaused)
                 return;
 
-            MoveRandomizeStep step = steps[currentStep];
+            if (Time.time > randomStepTime && !isRandomed)
+            {
+                isRandomed = true;
+                mover.Clear();
+
+                Vector3 stepPos = transform.position + new Vector3(Random.Range(0, 1) == 0 ? LeftLimit.x : RightLimit.x, transform.position.y, -randomStepSize);
+                Vector3 targetPos = new Vector3(stepPos.x, LeftLimit.y, LeftLimit.z);
+
+                mover.Move(stepPos, randomMoveSpeed);
+                mover.Move(targetPos, randomMoveSpeed);
+            }
         }
     }
 }
