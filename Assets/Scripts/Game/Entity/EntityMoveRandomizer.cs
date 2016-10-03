@@ -52,7 +52,7 @@ namespace Game.Entity
                 mover.Clear();
 
                 Vector3 stepPos = transform.position + new Vector3(Random.Range(0, 1) == 0 ? LeftLimit.x : RightLimit.x, transform.position.y, -randomStepSize);
-                Vector3 targetPos = new Vector3(stepPos.x, LeftLimit.y, LeftLimit.z);
+                Vector3 targetPos = new Vector3(stepPos.x, transform.position.y, LeftLimit.z);
 
                 mover.Move(stepPos, randomMoveSpeed);
                 mover.Move(targetPos, randomMoveSpeed);
