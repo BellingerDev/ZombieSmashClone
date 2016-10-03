@@ -1,5 +1,6 @@
 ﻿using Game.Draggable;
 using Game.Entity;
+using System;
 using UnityEngine;
 
 
@@ -8,6 +9,8 @@ namespace Game
     public class TouchController : MonoBehaviour
     {
         public static IDraggable DragObject { get; set; }
+
+        public Action OnEnemyClicked { get; set; }
 
         [SerializeField]
         private LayerMask raycastLayer;
@@ -58,7 +61,12 @@ namespace Game
 
                             IEntity entity = (IEntity)hit.collider.GetComponent(typeof(IEntity));
                             if (entity != null)
+                            {
                                 entity.ObtainDamage(player.TakeDamage());
+
+                                if (OnEnemyClicked != null)
+                                    OnEnemyClicked();
+                            }
                         }
                     }
                     else
@@ -75,6 +83,7 @@ namespace Game
 
                 if (Physics.Raycast(ray, out hit, raycastMaxDistance, raycastLayer))
                 {
+                    Debug.DrawLine(gameCamera.transform.position, hit.point);
                     DragObject.SetPos(hit.point);
                     isCasted = true;
                 }

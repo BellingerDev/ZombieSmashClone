@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: 11e09a3a0124e94489a63a8a2e8bbdd0
+timeCreated: 1475437175
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Neon_1
+    100002: Neon_2
+    100004: Shop_Balk_Front
+    100006: Shop_Balk_Left
+    100008: Shop_Door
+    100010: Shop_Front_Wall_Door
+    100012: Shop_Plank_1
+    100014: Shop_Roof
+    100016: Shop_Roof_Wall_Front
+    100018: Shop_Roof_Wall_Right
+    100020: Shop_Roof_Wall_Window
+    100022: Shop_Signboard_1
+    100024: Shop_Signboard_2
+    100026: Shop_Wall_Right
+    100028: Shop_Window
+    100030: //RootNode
+    100032: Neon_1.001
+    100034: Neon_1.002
+    100036: Neon_1.003
+    100038: Shop_Roof_Wall_Right.001
+    100040: Shop_Wall_Right.001
+    400000: Neon_1
+    400002: Neon_2
+    400004: Shop_Balk_Front
+    400006: Shop_Balk_Left
+    400008: Shop_Door
+    400010: Shop_Front_Wall_Door
+    400012: Shop_Plank_1
+    400014: Shop_Roof
+    400016: Shop_Roof_Wall_Front
+    400018: Shop_Roof_Wall_Right
+    400020: Shop_Roof_Wall_Window
+    400022: Shop_Signboard_1
+    400024: Shop_Signboard_2
+    400026: Shop_Wall_Right
+    400028: Shop_Window
+    400030: //RootNode
+    400032: Neon_1.001
+    400034: Neon_1.002
+    400036: Neon_1.003
+    400038: Shop_Roof_Wall_Right.001
+    400040: Shop_Wall_Right.001
+    2300000: Neon_1
+    2300002: Neon_2
+    2300004: Shop_Balk_Front
+    2300006: Shop_Balk_Left
+    2300008: Shop_Door
+    2300010: Shop_Front_Wall_Door
+    2300012: Shop_Plank_1
+    2300014: Shop_Roof
+    2300016: Shop_Roof_Wall_Front
+    2300018: Shop_Roof_Wall_Right
+    2300020: Shop_Roof_Wall_Window
+    2300022: Shop_Signboard_1
+    2300024: Shop_Signboard_2
+    2300026: Shop_Wall_Right
+    2300028: Shop_Window
+    2300030: Neon_1.001
+    2300032: Neon_1.002
+    2300034: Neon_1.003
+    2300036: Shop_Roof_Wall_Right.001
+    2300038: Shop_Wall_Right.001
+    3300000: Neon_1
+    3300002: Neon_2
+    3300004: Shop_Balk_Front
+    3300006: Shop_Balk_Left
+    3300008: Shop_Door
+    3300010: Shop_Front_Wall_Door
+    3300012: Shop_Plank_1
+    3300014: Shop_Roof
+    3300016: Shop_Roof_Wall_Front
+    3300018: Shop_Roof_Wall_Right
+    3300020: Shop_Roof_Wall_Window
+    3300022: Shop_Signboard_1
+    3300024: Shop_Signboard_2
+    3300026: Shop_Wall_Right
+    3300028: Shop_Window
+    3300030: Neon_1.001
+    3300032: Neon_1.002
+    3300034: Neon_1.003
+    3300036: Shop_Roof_Wall_Right.001
+    3300038: Shop_Wall_Right.001
+    4300000: Shop_Signboard_2
+    4300002: Neon_2
+    4300004: Neon_1
+    4300006: Shop_Signboard_1
+    4300008: Shop_Plank_1
+    4300010: Shop_Wall_Right
+    4300012: Shop_Roof_Wall_Front
+    4300014: Shop_Balk_Left
+    4300016: Shop_Roof
+    4300018: Shop_Door
+    4300020: Shop_Roof_Wall_Window
+    4300022: Shop_Front_Wall_Door
+    4300024: Shop_Roof_Wall_Right
+    4300026: Shop_Window
+    4300028: Shop_Balk_Front
+    4300030: Neon_1.003
+    4300032: Neon_1.002
+    4300034: Neon_1.001
+    4300036: Shop_Wall_Right.001
+    4300038: Shop_Roof_Wall_Right.001
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 1
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
